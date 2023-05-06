@@ -1,4 +1,4 @@
-<po-page-list p-title="Produtos" [p-actions]="actions" [p-filter]="filterSettings">
-  <po-table [p-columns]="columns" [p-items]="items" [p-height]="400" [p-sort]='true' [p-striped]='true'>
+<po-page-list #poPageList p-title='Produto' [p-filter]='filterSettings' [p-breadcrumb]='breadcrumb' [p-actions]='actions'>
+  <po-table [p-columns]='columns' [p-items]='items' [p-height]='400' [p-sort]='true' [p-striped]='true' [p-selectable]='true' [p-single-select]='false' (p-show-more)='loadMore()'>
   </po-table>
 </po-page-list>

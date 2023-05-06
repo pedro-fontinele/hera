@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PoMenuItem } from '@po-ui/ng-components';
+import { Routes } from 'src/app/helper/routes/routes';
 
 @Component({
   selector: 'app-menu',
@@ -8,19 +9,36 @@ import { PoMenuItem } from '@po-ui/ng-components';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  public logo: string = 'assets/imgs/logo-nolepng.png';
+
+  constructor() {}
 
   ngOnInit() {}
 
   readonly menus: Array<PoMenuItem> = [
     {
-      label: 'Cadastros',
+      label: 'Cadastro',
       icon: 'po-icon po-icon-clipboard',
       shortLabel: 'Cad.',
       subItems: [
         {
-          label: 'Produtos',
-          link: 'product'
+          label: 'Produto',
+          link: Routes.Product
+        },
+        {
+          label: 'Cliente'
+        },
+        {
+          label: 'Fornecedor'
+        },
+        {
+          label: 'Categoria'
+        },
+        {
+          label: 'Empresa'
+        },
+        {
+          label: 'Local de armazenamento'
         }
       ]
     }
