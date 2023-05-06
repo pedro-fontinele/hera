@@ -1,0 +1,24 @@
+<po-page-default p-title='Cadastro de produto' [p-breadcrumb]='breadcrumb' [p-actions]='actions'>
+  <form  #formProduct="ngForm">
+    <po-divider p-label='Estrutural'></po-divider>
+    <div class='po-row'>
+      <po-input class='po-md-5' name='name' [(ngModel)]='product.name' p-label='Nome do produto' p-clean p-required></po-input>
+      <po-input class='po-md-7' name='description' [(ngModel)]='product.description' p-label='Descrição' p-clean></po-input>
+      <po-combo class='po-md-3' name='isActive' [ngModel]='product.isActive' (ngModelChange)='product.isActive' p-label='Status' [p-options]='statusOptions' [p-clean]='true'></po-combo>
+    </div>
+    <po-divider p-label='Embalagem'></po-divider>
+    <div class='po-row'>
+      <po-combo class='po-md-4' name='sku' p-label='Embalagem' [p-options]='optionsSku' [p-clean]='true'></po-combo>
+      <po-decimal class='po-md-4' name='weight' p-label='Peso' p-clean></po-decimal>
+      <po-decimal class='po-md-4' name='height' p-label='Altura' p-clean></po-decimal>
+    </div>
+    <div class='po-row'>
+      <po-decimal class='po-md-4' name='width' p-label='Largura' p-clean></po-decimal>
+      <po-decimal class='po-md-4' name='length' p-label='Comprimento' p-clean></po-decimal>
+      <po-input class='po-md-4' name='ean' p-label='EAN' p-clean></po-input>
+    </div>
+    <div class='po-row'>      
+      <po-combo class='po-md-3' name='isActive' p-label='Status' [p-options]='statusOptions' [p-clean]='true'></po-combo>
+    </div>
+  </form>
+</po-page-default>

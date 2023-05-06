@@ -10,8 +10,7 @@ export class ProductService {
 
   private readonly baseUrl: string = 'http://localhost:5000/api/v1/product';
 
-  constructor (private http: HttpClient) { 
-  }
+  constructor (private http: HttpClient) {}
 
   public getAllProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl).pipe(take(1));
@@ -32,5 +31,5 @@ export class ProductService {
   public deleteProductById(idProduct: number): Observable<Product> {
     return this.http.delete<Product>(`${this.baseUrl}/id/${idProduct}`).pipe(take(1));
   }
+  
 }
-
